@@ -1,0 +1,3 @@
+timestamp,file_path,event_type,old_hash,new_hash,severity
+2026-01-03T22:02:21.070965,watch_dir/demo_original.txt,DELETED,9c09486903ae01af65e1c0b457b4722bc609ac2b30393cd0456a1f81472a631d,,
+2026-01-03T22:02:28.130673,watch_dir/file_secure_monitor,CREATED,,60516b8ac4f5de9cd5c9c6dcffbeb94b9129b23a66394028efded82801e3a2b5,

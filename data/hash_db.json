@@ -18,5 +18,10 @@
     "hash": "0bb846fb61b54983d479bd10d6f8113b1f44432a59f114e1841ba928d4da7ad9",
     "first_seen": "2026-01-03T20:50:00.834303",
     "last_checked": "2026-01-03T20:50:00.834303"
+  },
+  "/home/kali-attacker/Documents/secure_moniter/watch_dir/file_secure_monitor": {
+    "hash": "60516b8ac4f5de9cd5c9c6dcffbeb94b9129b23a66394028efded82801e3a2b5",
+    "first_seen": "2026-01-03T22:06:51.706439",
+    "last_checked": "2026-01-03T22:06:51.706439"
   }
 }

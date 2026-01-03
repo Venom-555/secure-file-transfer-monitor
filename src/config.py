@@ -1,25 +1,25 @@
-"""
-Configuration handler for the monitoring system
-"""
+"""Configuration handler for the monitoring system.
 
-import yaml
+This module intentionally uses only the Python standard library. The
+configuration file is stored as JSON under `config/config.json`.
+"""
+import json
 from pathlib import Path
+from typing import Any, Dict
 
 
 class Config:
-    """Handles configuration loading and management"""
+    """Load and expose configuration values with sane defaults."""
 
-    def __init__(self, config_path="config/config.yaml"):
+    def __init__(self, config_path: str = "config/config.json"):
         self.config_path = Path(config_path)
         self.config = self.load_config()
 
-    def load_config(self):
-        """Load configuration from YAML file"""
+    def load_config(self) -> Dict[str, Any]:
         default_config = {
             "monitoring": {
                 "watch_paths": [
-                    "/var/log",
-                    "/tmp"
+                    "watch_dir"
                 ],
                 "recursive": True,
                 "poll_interval": 1
@@ -52,34 +52,28 @@ class Config:
 
         if self.config_path.exists():
             try:
-                with open(self.config_path, "r", encoding="utf-8") as f:
-                    user_config = yaml.safe_load(f) or {}
-                    return self.merge_configs(default_config, user_config)
+                with open(self.config_path, 'r', encoding='utf-8') as f:
+                    user = json.load(f) or {}
+                    self._merge(default_config, user)
+                    return default_config
             except Exception:
                 return default_config
         else:
-            self.create_default_config(default_config)
+            # create default config JSON for users to edit
+            try:
+                self.config_path.parent.mkdir(parents=True, exist_ok=True)
+                with open(self.config_path, 'w', encoding='utf-8') as f:
+                    json.dump(default_config, f, indent=2)
+            except Exception:
+                pass
             return default_config
 
-    def merge_configs(self, default, user):
-        """Merge default and user configurations"""
-        merged = default.copy()
-
-        def merge_dicts(d1, d2):
-            for key, value in (d2 or {}).items():
-                if key in d1 and isinstance(d1[key], dict) and isinstance(value, dict):
-                    merge_dicts(d1[key], value)
-                else:
-                    d1[key] = value
-
-        merge_dicts(merged, user)
-        return merged
-
-    def create_default_config(self, config):
-        """Create default configuration file"""
-        self.config_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(self.config_path, "w", encoding="utf-8") as f:
-            yaml.dump(config, f, default_flow_style=False)
+    def _merge(self, base: Dict[str, Any], override: Dict[str, Any]) -> None:
+        for k, v in (override or {}).items():
+            if k in base and isinstance(base[k], dict) and isinstance(v, dict):
+                self._merge(base[k], v)
+            else:
+                base[k] = v
 
     def get_watch_paths(self):
         return self.config["monitoring"]["watch_paths"]
@@ -97,12 +91,14 @@ class Config:
         return self.config["alerts"]["alerts_log"]
 
     def get_email_alerts_enabled(self):
-        return self.config["alerts"]["email_alerts"]
+        return self.config["alerts"].get("email_alerts", False)
 
     def get_smtp_config(self):
         return self.config.get("smtp", {})
 
     def save_config(self):
-        """Save current configuration to file"""
-        with open(self.config_path, "w", encoding="utf-8") as f:
-            yaml.dump(self.config, f, default_flow_style=False)
+        try:
+            with open(self.config_path, 'w', encoding='utf-8') as f:
+                json.dump(self.config, f, indent=2)
+        except Exception:
+            pass

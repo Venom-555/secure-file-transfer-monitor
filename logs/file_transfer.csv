@@ -16,3 +16,5 @@ timestamp,event_type,source_path,destination_path,user,process,sensitive,unautho
 2025-12-22T15:46:25.343537,MODIFIED,./watch_dir/demo_original.txt,,kali-attacker,UNKNOWN,LOW,0,0,NOT_CHECKED,
 2026-01-03T20:50:16.736455,DELETED,./watch_dir/.keep,,kali-attacker,UNKNOWN,LOW,0,0,FILE_REMOVED,
 2026-01-03T20:50:49.637361,CREATED,./watch_dir/.keep,,kali-attacker,UNKNOWN,LOW,0,0,NEW_FILE_REGISTERED,
+2026-01-03T22:02:21.070965,DELETED,watch_dir/demo_original.txt,,kali-attacker,UNKNOWN,LOW,0,0,FILE_REMOVED,
+2026-01-03T22:02:28.130673,CREATED,watch_dir/file_secure_monitor,,kali-attacker,UNKNOWN,LOW,0,0,NEW_FILE_REGISTERED,

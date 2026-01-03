@@ -1,22 +1,22 @@
 {
-  "/home/kali-attacker/Documents/secure_moniter/watch_dir/demo_original.txt": {
-    "hash": "9c09486903ae01af65e1c0b457b4722bc609ac2b30393cd0456a1f81472a631d",
-    "size": 106,
-    "first_seen": "2026-01-03T20:50:00.834068"
+  "/home/kali-attacker/Documents/secure_moniter/watch_dir/file_secure_monitor": {
+    "hash": "60516b8ac4f5de9cd5c9c6dcffbeb94b9129b23a66394028efded82801e3a2b5",
+    "size": 932,
+    "first_seen": "2026-01-03T22:06:51.706439"
   },
   "/home/kali-attacker/Documents/secure_moniter/watch_dir/testfile.txt": {
     "hash": "5a6e58fcd240c51fd4d5808185cc5e95ba717bf7ae1485849a4207ddfb5e56cb",
     "size": 7372,
-    "first_seen": "2026-01-03T20:50:00.834217"
+    "first_seen": "2026-01-03T22:06:51.706524"
   },
   "/home/kali-attacker/Documents/secure_moniter/watch_dir/demo_corrupted.txt": {
     "hash": "99897715fc7af0a4b0ee803698eadf3626f3e2837a93f36c4e1970baa131ff3b",
     "size": 106,
-    "first_seen": "2026-01-03T20:50:00.834268"
+    "first_seen": "2026-01-03T22:06:51.706567"
   },
   "/home/kali-attacker/Documents/secure_moniter/watch_dir/.keep": {
     "hash": "0bb846fb61b54983d479bd10d6f8113b1f44432a59f114e1841ba928d4da7ad9",
     "size": 2028,
-    "first_seen": "2026-01-03T20:50:49.637558"
+    "first_seen": "2026-01-03T22:06:51.706607"
   }
 }

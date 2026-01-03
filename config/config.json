@@ -1,0 +1,44 @@
+{
+  "monitoring": {
+    "watch_paths": [
+      "watch_dir"
+    ],
+    "recursive": true,
+    "poll_interval": 1
+  },
+  "security": {
+    "sensitive_directories": [
+      "/etc",
+      "/home/secure"
+    ],
+    "restricted_extensions": [
+      ".exe",
+      ".dll",
+      ".bat",
+      ".ps1"
+    ],
+    "authorized_users": [
+      "root",
+      "admin"
+    ]
+  },
+  "integrity": {
+    "hash_database": "data/hash_db.json",
+    "hash_algorithm": "sha256"
+  },
+  "alerts": {
+    "enabled": true,
+    "email_alerts": false,
+    "alerts_log": "logs/alerts.log",
+    "minimum_severity": "MEDIUM"
+  },
+  "logging": {
+    "transfer_log": "logs/file_transfer.log",
+    "log_level": "INFO",
+    "max_log_size_mb": 10
+  },
+  "reporting": {
+    "generate_daily_reports": true,
+    "report_directory": "reports/"
+  }
+}

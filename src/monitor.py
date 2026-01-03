@@ -15,6 +15,7 @@ from logger import Logger
 from alert_system import AlertSystem
 from integrity_checker import IntegrityChecker
 from reporter import write_startup_report, log_runtime_event
+from severity import score_severity
 
 
 class FileTransferHandler(FileSystemEventHandler):
@@ -149,11 +150,7 @@ class FileTransferHandler(FileSystemEventHandler):
             old_hash = integrity.get('stored_hash')
             new_hash = integrity.get('current_hash')
             # Risk level heuristics
-            risk = 'LOW'
-            if integrity.get('status') in ('INTEGRITY_FAILED', 'MISMATCH'):
-                risk = 'HIGH'
-            elif is_sensitive:
-                risk = 'MEDIUM'
+            risk = score_severity(event_type, integrity.get('status'), is_sensitive)
 
             event_report = {
                 'timestamp': timestamp,

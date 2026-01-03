@@ -2,11 +2,11 @@
 File Integrity Checker using SHA256 hashing
 """
 
-import hashlib
 import json
 from pathlib import Path
 from datetime import datetime
 from config import Config
+from hashing import calculate_sha256
 
 class IntegrityChecker:
     """Handles file integrity checks using cryptographic hashing"""
@@ -21,18 +21,11 @@ class IntegrityChecker:
         self.baseline = self.load_baseline()
     
     def calculate_hash(self, file_path, algorithm='sha256'):
-        """Calculate hash of a file"""
-        try:
-            hash_func = getattr(hashlib, algorithm)()
-            
-            with open(file_path, 'rb') as f:
-                for chunk in iter(lambda: f.read(4096), b''):
-                    hash_func.update(chunk)
-            
-            return hash_func.hexdigest()
-        except Exception as e:
-            print(f"Error calculating hash for {file_path}: {e}")
-            return None
+        """Calculate hash of a file using the centralized hashing helper.
+
+        Returns hex digest or None on error.
+        """
+        return calculate_sha256(file_path)
     
     def check_file(self, file_path):
         """Check file integrity against stored hash"""
