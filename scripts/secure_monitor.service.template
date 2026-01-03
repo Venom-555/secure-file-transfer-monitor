@@ -1,0 +1,13 @@
+[Unit]
+Description=Secure File Transfer Monitor (user service)
+After=network.target
+
+[Service]
+Type=simple
+# The installer script will replace {{PYTHON}} and {{PROJECT_DIR}} with real paths
+ExecStart={{PYTHON}} {{PROJECT_DIR}}/run_monitor.py
+WorkingDirectory={{PROJECT_DIR}}
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

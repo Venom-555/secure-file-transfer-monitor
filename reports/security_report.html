@@ -1,0 +1,178 @@
+
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>File Transfer Security Report</title>
+            <style>
+                body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
+                .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                h1, h2, h3 { color: #333; }
+                .header { background: #2c3e50; color: white; padding: 20px; border-radius: 5px; margin-bottom: 20px; }
+                .card { background: #f8f9fa; border-left: 4px solid #007bff; padding: 15px; margin: 10px 0; border-radius: 4px; }
+                .alert-high { border-left-color: #dc3545; background: #f8d7da; }
+                .alert-medium { border-left-color: #ffc107; background: #fff3cd; }
+                .alert-low { border-left-color: #28a745; background: #d4edda; }
+                table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+                th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+                th { background-color: #2c3e50; color: white; }
+                tr:hover { background-color: #f5f5f5; }
+                .stats { display: flex; justify-content: space-between; flex-wrap: wrap; }
+                .stat-box { flex: 1; min-width: 200px; background: #e9ecef; padding: 15px; margin: 10px; border-radius: 5px; text-align: center; }
+                .stat-value { font-size: 24px; font-weight: bold; color: #007bff; }
+                .timestamp { color: #6c757d; font-size: 0.9em; }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <div class="header">
+                    <h1>📊 Secure File Transfer Monitoring Report</h1>
+                    <p class="timestamp">Generated: 2025-12-17 21:28:53</p>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-box">
+                        <h3>Total Events</h3>
+                            <div id="total-events" class="stat-value">2</div>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Unauthorized Events</h3>
+                            <div id="unauth-events" class="stat-value" style="color: #dc3545;">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Sensitive Events</h3>
+                            <div id="sensitive-events" class="stat-value" style="color: #ffc107;">0</div>
+                    </div>
+                    <div class="stat-box">
+                        <h3>Violation Rate</h3>
+                            <div id="violation-rate" class="stat-value">0.0%</div>
+                    </div>
+                </div>
+
+                <!-- SOC Summary -->
+                <div style="margin:20px 0; padding:15px; background:#eef3f8; border-radius:6px;">
+                    <h2>🛡️ SOC Summary</h2>
+                    <p><strong>Detected Threats:</strong> <span id="detected-threats">0</span></p>
+                    <p><strong>High / Medium / Low:</strong> <span id="sev-high">0</span> / <span id="sev-med">0</span> / <span id="sev-low">2</span></p>
+                    <p><strong>Top Violations:</strong> None</p>
+                </div>
+                
+                <h2>📈 Event Breakdown</h2>
+                <table>
+                    <tr>
+                        <th>Event Type</th>
+                        <th>Count</th>
+                        <th>Percentage</th>
+                    </tr>
+        
+                    <tr>
+                        <td>MODIFIED</td>
+                        <td>2</td>
+                        <td>100.0%</td>
+                    </tr>
+            
+                </table>
+
+                <!-- RED ALERT BANNER -->
+        
+                <h2>🔍 Event Validation Details</h2>
+                <table>
+                    <tr>
+                        <th>Time</th>
+                        <th>Type</th>
+                        <th>File</th>
+                        <th>User</th>
+                        <th>Sensitive</th>
+                        <th>Unauthorized</th>
+                        <th>Violations</th>
+                        <th>Integrity</th>
+                        <th>Severity</th>
+                    </tr>
+        
+                    <tr>
+                        <td>2025-12-17T16:59:31.463390</td>
+                        <td>MODIFIED</td>
+                        <td>./watch_dir/testfile.txt</td>
+                        <td>kali-attacker</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>&nbsp;</td>
+                        <td>NOT_CHECKED</td>
+                        <td style="color:#28a745; font-weight:bold;">LOW</td>
+                    </tr>
+            
+                    <tr>
+                        <td>2025-12-17T21:22:25.936987</td>
+                        <td>MODIFIED</td>
+                        <td>./watch_dir/testfile.txt</td>
+                        <td>kali-attacker</td>
+                        <td>No</td>
+                        <td>No</td>
+                        <td>&nbsp;</td>
+                        <td>NOT_CHECKED</td>
+                        <td style="color:#28a745; font-weight:bold;">LOW</td>
+                    </tr>
+            
+            </table>
+
+            <h2>🚨 Recent Security Alerts</h2>
+        
+                <h2>👤 User Activity Summary</h2>
+                <table>
+                    <tr>
+                        <th>Username</th>
+                        <th>File Events</th>
+                        <th>Last Activity</th>
+                    </tr>
+        
+                    <tr>
+                        <td>kali-attacker</td>
+                        <td>2</td>
+                        <td>Recent</td>
+                    </tr>
+            
+                </table>
+                
+                <div style="margin-top: 30px; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                    <h3>🔒 Security Recommendations</h3>
+                    <ul>
+                        <li>Review all HIGH severity alerts immediately</li>
+                        <li>Check USB transfer policies for compliance</li>
+                        <li>Verify user permissions on sensitive directories</li>
+                        <li>Schedule regular integrity checks on critical files</li>
+                        <li>Consider implementing additional DLP solutions</li>
+                    </ul>
+                </div>
+                
+                <footer style="margin-top: 30px; text-align: center; color: #6c757d; font-size: 0.9em;">
+                    <p>Generated by Secure File Transfer Monitoring System v1.0</p>
+                    <p>This report contains sensitive security information. Handle with care.</p>
+                </footer>
+            </div>
+        </body>
+        </html>
+        
+            <script>
+            async function refreshSummary(){
+                try{
+                    const res = await fetch('summary.json', {cache: 'no-store'});
+                    if(!res.ok) return;
+                    const data = await res.json();
+                    const stats = data.statistics || {};
+                    document.getElementById('total-events').innerText = stats.total_events || 0;
+                    document.getElementById('unauth-events').innerText = stats.unauthorized_events || 0;
+                    document.getElementById('sensitive-events').innerText = stats.sensitive_events || 0;
+                    document.getElementById('violation-rate').innerText = (stats.unauthorized_percentage||0).toFixed(1) + '%';
+                    document.getElementById('detected-threats').innerText = data.threats_count || 0;
+                    const sev = data.severity_map || {};
+                    document.getElementById('sev-high').innerText = sev.high || 0;
+                    document.getElementById('sev-med').innerText = sev.medium || 0;
+                    document.getElementById('sev-low').innerText = sev.low || 0;
+                }catch(e){console.debug('refreshSummary',e)}
+            }
+            // initial load and periodic refresh
+            refreshSummary();
+            setInterval(refreshSummary, 5000);
+            </script>
+            

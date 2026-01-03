@@ -1,0 +1,11 @@
+Startup Baseline Report
+Generated: 2026-01-03T20:50:00.841281
+Total files scanned: 4
+Hashes recorded: 4
+Initial integrity status: BASELINE_CREATED
+
+Sample entries (up to 20):
+- /home/kali-attacker/Documents/secure_moniter/watch_dir/demo_original.txt | size=106 | hash=9c09486903ae01af65e1c0b457b4722bc609ac2b30393cd0456a1f81472a631d
+- /home/kali-attacker/Documents/secure_moniter/watch_dir/testfile.txt | size=7372 | hash=5a6e58fcd240c51fd4d5808185cc5e95ba717bf7ae1485849a4207ddfb5e56cb
+- /home/kali-attacker/Documents/secure_moniter/watch_dir/demo_corrupted.txt | size=106 | hash=99897715fc7af0a4b0ee803698eadf3626f3e2837a93f36c4e1970baa131ff3b
+- /home/kali-attacker/Documents/secure_moniter/watch_dir/.keep | size=2028 | hash=0bb846fb61b54983d479bd10d6f8113b1f44432a59f114e1841ba928d4da7ad9

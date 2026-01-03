@@ -1,0 +1,9 @@
+{
+  "generated": "2026-01-03T20:50:49.642864",
+  "statistics": {
+    "total_events": 23,
+    "unauthorized_events": 0,
+    "sensitive_events": 0,
+    "unauthorized_percentage": 0.0
+  }
+}

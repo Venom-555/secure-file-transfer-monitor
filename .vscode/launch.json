@@ -1,0 +1,69 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run Monitor (run_monitor.py)",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/run_monitor.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "justMyCode": false,
+      "args": []
+    },
+    {
+      "name": "Run Monitor (module)",
+      "type": "python",
+      "request": "launch",
+      "module": "run_monitor",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/src"
+      },
+      "justMyCode": false
+    }
+  ]
+}
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Start Monitor",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/monitor.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            }
+        },
+        {
+            "name": "Generate Report",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/reports/generate_report.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "Run Tests",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tests/test_monitor.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}

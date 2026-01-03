@@ -1,0 +1,2 @@
+{"timestamp": "2026-01-03T20:50:16.736455", "event_type": "DELETED", "file_path": "./watch_dir/.keep", "old_hash": "0bb846fb61b54983d479bd10d6f8113b1f44432a59f114e1841ba928d4da7ad9", "new_hash": null, "risk_level": "LOW", "status": "FILE_REMOVED", "violations": []}
+{"timestamp": "2026-01-03T20:50:49.637361", "event_type": "CREATED", "file_path": "./watch_dir/.keep", "old_hash": null, "new_hash": "0bb846fb61b54983d479bd10d6f8113b1f44432a59f114e1841ba928d4da7ad9", "risk_level": "LOW", "status": "NEW_FILE_REGISTERED", "violations": []}
